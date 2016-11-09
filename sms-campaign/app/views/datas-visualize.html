@@ -1,0 +1,14 @@
+<h3> Nombre de données :  <span class="label label-info">{{datasLength}}</span> </h3>
+<div>
+  <table class="table table-striped">
+       <th> N°  </th>
+       <th> Nom </th>
+       <th> N° Tel </th>
+
+       <tr ng-repeat="user in datas">
+          <td> {{$index + 1}}</td>
+          <td> <a ui-sref="users.details({user: user.name})"> {{user.name}} </a></td>
+          <td> {{user.tel}}</td>
+       </tr>
+   </table>
+</div> 

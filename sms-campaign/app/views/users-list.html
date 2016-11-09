@@ -1,0 +1,22 @@
+<h2> Utilisateurs</h2>
+<table class="table table-bordered table-bordered" ng-hide="emptyUsers">
+  <th>Login</th>
+  <th>Password</th>
+  <th>Name</th>
+  <th>Age</th>
+
+  <tr ng-repeat="u in receivedUsers">
+    <td><a ui-sref="users.details">{{u.login}}</a></td>
+    <td>{{u.password}}</td>
+    <td>{{u.name}}</td>
+    <td>{{u.age}}</td>
+  </tr>
+</table>
+
+<div class="col-lg-3" ng-show="emptyUsers">
+  </br>
+  </br>
+  <div class="alert alert-danger">
+    <strong>Oups! :</strong> Aucun utilisateur trouvé.
+  </div>
+</div>

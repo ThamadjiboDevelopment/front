@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+  <!--   <link href="scripts/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/datasImport.js"></script>
+  <script src="scripts/controllers/campaignsCtrl.js"></script>
+  <script src="scripts/controllers/loginCtrl.js"></script>
+  <script src="scripts/controllers/usersCtrl.js"></script>
+
+  <style>
+    header {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 50px;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      position: fixed;
+      height: 20%;
+      left: 0px;
+      bottom: 0px;
+      padding: 25px;
+      width: 100%;
+    }
+
+    [class*="col"] {
+      text-align: center;
+    }
+
+    #barre {
+      width: 70%
+    }
+
+    .center {
+      margin: auto;
+      width: 40%;
+    }
+
+    #central-container {
+      color: black;
+    }
+
+    ul.nav li.dropdown:hover > ul.dropdown-menu {
+      display: block;
+    }
+
+    #wrapper {
+      width: 100%;
+    }
+
+    #wrapper .container {
+      max-width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body ng-app="smsCampaignApp">
+
+
+<header>
+  <h1>Gestionnaire de campagnes SMS</h1>
+</header>
+<nav id="menu" ng-controller="loginCtrl">
+  <ul id="barre" class="nav nav-pills center">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Campagnes Sms </a>
+      <ul class="dropdown-menu">
+        <li><a ui-sref="campaigns.add">Créer une campagne SMS</a></li>
+        <li><a href="#">Rechercher une campagne SMS</a></li>
+      </ul>
+    </li>
+    <li><a ui-sref="import">Import de données</a></li>
+    <li><a href="#">Statistiques</a></li>
+    <li><a href="#">Gestion du compte</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Utilisateurs</a>
+      <ul class="dropdown-menu">
+        <li><a ui-sref="users.search">Rechercher un utilisateur</a></li>
+        <li><a ui-sref="users.add">Ajouter un utilisateur</a></li>
+      <!--  <li><a ui-sref="users.edit">Modifier un utilisateur</a></li>-->
+
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div id="wrapper">
+  <div class="container">
+    <footer>
+      <div class="row">
+        <div class="col-lg-6">
+          <h4>Press'Conseil SARL</h4>
+          <h5>28 Rue GIMELLI , 83000 Toulon</h5>
+          <h5>Tel: 04 94 91 14 19</h5>
+          <h5>Site : www.lejbm.fr - Appli android : LeJBM Annonces</h5>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Autres informations</h4>
+          <h5> ... </h5>
+          <h5> ... </h5>
+
+        </div>
+      </div>
+    </footer>
+    <div ui-view ng-controller="homeCtrl"/>
+    <div ui-view ng-controller="campaignsCtrl"/>
+    <div ui-view ng-controller="datasImportCtrl"/>
+    <div ui-view ng-controller="loginCtrl"/>
+    <div ui-view ng-controller="usersCtrl"/>
+
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--     <script src="scripts/bootstrap/jquery.min.js"></script> -->
+<!--   <script src="scripts/bootstrap/bootstrap.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>   -->
+
+</body>
+
+</html>

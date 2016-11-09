@@ -1,0 +1,25 @@
+<div ng-init="value='Hello'">
+	<h3> Import des données </h3>
+	<br/>
+
+	<!--
+		<h5>Test directive </h5>
+	<input type="text" class="form-control" ng-model="value"/>
+	<div ng-test name="value"> </div>
+-->
+	<form class="form-horizontal">
+		<input type="file" name="fileInput" ng-file-upload="fileToUpload" value="Selectionner le fichier"/>
+		
+	<!--	   Nom du fichier : <label>{{selectedFileName}}</label> -->
+		</br>
+		</br>
+		<input type="submit"  class="btn btn-primary" value="Importer les données" class="form-control" ng-click="uploadFile()"></input>
+		</br>
+		</br>
+		</br>
+		<a ui-sref=".visualize" class="btn btn-success" ng-disabled="canNotVisualize"> Visualiser les données importées </a>
+
+		<div ui-view/> 
+
+	</form>
+</div>
