@@ -6,9 +6,7 @@
   <th>Age</th>
 
   <tr ng-repeat="u in receivedUsers">
-    <td><a ui-sref="users.details">{{u.login}}</a></td>
-    <td>{{u.password}}</td>
-    <td>{{u.name}}</td>
+    <td><a ui-sref="users.details({user: u})">{{u.login}}</a></td>
     <td>{{u.age}}</td>
   </tr>
 </table>

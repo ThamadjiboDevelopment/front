@@ -1,1 +1,14 @@
 <h2>User details</h2>
+<table class="table table-bordered table-bordered" ng-hide="emptyUsers">
+  <th>Login</th>
+  <th>Password</th>
+  <th>Name</th>
+  <th>Age</th>
+
+  <tr>
+    <td>{{userDetails.login}}</td>
+    <td>{{userDetails.password}}</td>
+    <td>{{userDetails.name}}</td>
+    <td>{{userDetails.age}}</td>
+  </tr>
+</table>

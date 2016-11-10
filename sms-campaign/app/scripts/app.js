@@ -92,10 +92,16 @@ angular
           }
         }
       })
+
       .state('users.details', {
         url: '/details',
         templateUrl: 'views/users-details.html',
-        controller: 'usersCtrl'
+        controller: 'usersCtrl',
+        params: {
+          user: {
+            value: {}
+          }
+        }
       })
       .state('users.edit', {
         url: '/edit',

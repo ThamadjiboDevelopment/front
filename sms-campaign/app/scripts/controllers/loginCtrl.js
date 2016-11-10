@@ -20,7 +20,6 @@ angular.module('smsCampaignApp')
        show a message error to the Sign in page
        else
        Retrieve datas from the endpoint and redirect to the homepage
-
        */
       var found = false;
       if (login == 'foo' && password == 'bar') {
