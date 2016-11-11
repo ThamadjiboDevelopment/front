@@ -88,8 +88,6 @@ app.controller('usersListCtrl', function($scope, $stateParams) {
   }
   $scope.receivedUsers = users
 
-  //console.log(LOG + 'Sent data from users search page : '+ users[O].login)
-  //$state.sentLogin = users[O].login
 })
 
 app.controller('userDetailsCtrl', function($scope, $stateParams){
