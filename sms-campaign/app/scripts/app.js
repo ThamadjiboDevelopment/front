@@ -96,7 +96,7 @@ angular
       .state('users.details', {
         url: '/details',
         templateUrl: 'views/users-details.html',
-        controller: 'usersCtrl',
+        controller: 'userDetailsCtrl',
         params: {
           user: {
             value: {}

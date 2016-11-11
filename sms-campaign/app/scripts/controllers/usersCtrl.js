@@ -92,13 +92,12 @@ app.controller('usersListCtrl', function($scope, $stateParams) {
   //$state.sentLogin = users[O].login
 })
 
-app.controller('userDetailsCtrl', function($scope, $stapeParams){
+app.controller('userDetailsCtrl', function($scope, $stateParams){
   var LOG = '[userDetailsCtrl] => '
   console.log(LOG + 'Entered')
 
-  $scope.userDetails = $stapeParams.user;
+  $scope.userDetails = $stateParams.user;
 
 })
-
 
 

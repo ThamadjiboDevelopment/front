@@ -2,8 +2,6 @@
 <table class="table table-bordered table-bordered" ng-hide="emptyUsers">
   <th>Login</th>
   <th>Password</th>
-  <th>Name</th>
-  <th>Age</th>
 
   <tr ng-repeat="u in receivedUsers">
     <td><a ui-sref="users.details({user: u})">{{u.login}}</a></td>
