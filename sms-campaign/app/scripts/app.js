@@ -22,19 +22,18 @@ angular
         controller: 'homeCtrl'
       })
 
-
       /**
        * IMPORT
        */
       .state('import', {
         url: '/import',
-        templateUrl: 'views/datasImport.html',
+        templateUrl: 'views/import/import-data.html',
         controller: 'datasImportCtrl'
       })
 
       .state('import.visualize', {
         url: '/visualize',
-        templateUrl: 'views/datas-visualize.html',
+        templateUrl: 'views/import/visualize-import.html',
         controller: 'datasImportCtrl'
       })
 
@@ -44,21 +43,27 @@ angular
       .state('campaigns', {
         abstract: 'true',
         url: '/campaigns',
-        templateUrl: 'views/campaigns.html'
+        templateUrl: 'views/campaigns/campaigns.html'
         //        controller: 'campaignsCtrl'
       })
 
       .state('campaigns.add', {
         url: '/add',
-        templateUrl: 'views/campaigns-add.html',
+        templateUrl: 'views/campaigns/campaigns-add.html',
+        controller: 'campaignsCtrl'
+      })
+
+      .state('campaigns.search', {
+        url: '/search',
+        templateUrl: 'views/campaigns/campaigns-search.html',
         controller: 'campaignsCtrl'
       })
 
       /**
        * LOGIN
        */
-      .state('login', {
-        url: '/signIn',
+      .state('sign-in', {
+        url: '/sign-in',
         templateUrl: 'views/login.html',
         controller: 'loginCtrl'
       })
@@ -69,21 +74,21 @@ angular
       .state('users', {
         abstract: 'true',
         url: '/users',
-        templateUrl: 'views/users.html'
+        templateUrl: 'views/users/users.html'
       })
       .state('users.search', {
         url: '/search',
-        templateUrl: 'views/users-search.html',
-        controller: 'usersCtrl'
+        templateUrl: 'views/users/users-search.html',
+        controller: 'usersSearchCtrl'
       })
       .state('users.add', {
         url: '/add',
-        templateUrl: 'views/users-add.html',
-        controller: 'usersCtrl'
+        templateUrl: 'views/users/users-add.html',
+        controller: 'usersAddCtrl'
       })
       .state('users.list', {
         url: '/list',
-        templateUrl: 'views/users-list.html',
+        templateUrl: 'views/users/users-list.html',
         controller: 'usersListCtrl',
         params: {
           users: {
@@ -95,7 +100,7 @@ angular
 
       .state('users.details', {
         url: '/details',
-        templateUrl: 'views/users-details.html',
+        templateUrl: 'views/users/users-details.html',
         controller: 'userDetailsCtrl',
         params: {
           user: {
@@ -103,10 +108,11 @@ angular
           }
         }
       })
+
       .state('users.edit', {
         url: '/edit',
-        templateUrl: 'views/users-edit',
-        controller: 'usersCtrl'
+        templateUrl: 'views/users/users-edit',
+        controller: 'usersEditCtrl'
       })
   });
 
@@ -125,12 +131,6 @@ app.factory('usersMockFactory', function () {
       'password': 'barpass',
       'name': 'M.Bar',
       'age': '35'
-    },
-    {
-      'login': 'malika',
-      'password': 'cassepied',
-      'name': 'Mlle fofolle',
-      'age': '45'
     }
   ]
 

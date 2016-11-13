@@ -2,9 +2,16 @@
 
 angular.module('smsCampaignApp')
   .controller('loginCtrl', function ($scope, $state) {
-    var LOG = '[LoginCtrl] => ';
+    var LOG = '[LoginCtrl] => '
     console.log(LOG + "Entered");
-//    $state.go('home')
+
+    $("[name='rememberCredentials']").bootstrapSwitch();
+    $.fn.bootstrapSwitch.defaults.onText = 'Oui'
+    $.fn.bootstrapSwitch.defaults.offText = 'Non'
+    $.fn.bootstrapSwitch.defaults.onColor = 'success'
+    $.fn.bootstrapSwitch.defaults.offColor = 'danger'
+
+
 
     $scope.signIn = function () {
       var login = $scope.login

@@ -1,0 +1,60 @@
+<div class="row">
+  <h2>Rechercher une campagne</h2>
+</div>
+
+<div class="row">
+  <h4>Si vous disposez de la référence de la campagne</h4>
+</div>
+
+<form class="form-horizontal">
+  <div class="form-group row">
+    <label for="campaignId" class="control-label col-lg-3">Référence:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="campaignId" ng-model="campaignId">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-1">
+      <button type= "submit" class="btn btn-primary">Rechercher</button>
+    </div>
+  </div>
+
+</form>
+
+</br>
+</br>
+</br>
+
+<div class="row">
+  <h4>Sinon :</h4>
+</div>
+
+
+<form class="form-horizontal">
+
+  <div class="form-group row">
+    <label for="campaignName" class="control-label col-lg-3">Nom de la campagne:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="campaignName" ng-model="campaignName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="clientName" class="control-label col-lg-3">Nom du client:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="clientName" ng-model="clientName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="campaignCreationDate" class="control-label col-lg-3">Date de création:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="campaignCreationDate" ng-model="campaignCreationDate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary col-lg-offset-3 col-lg-1" ng-click="searchUser()">Rechercher</button>
+  </div>
+
+</form>

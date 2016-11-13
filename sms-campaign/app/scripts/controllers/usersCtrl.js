@@ -23,7 +23,7 @@ var app = angular.module('smsCampaignApp');
  })*/
 
 
-app.controller('usersCtrl', function ($scope, $state, usersMockFactory) {
+app.controller('usersSearchCtrl', function ($scope, $state, usersMockFactory) {
     var LOG = '[usersCtrl] => '
 
     $scope.login = ''
@@ -98,4 +98,24 @@ app.controller('userDetailsCtrl', function($scope, $stateParams){
 
 })
 
+app.controller('usersAddCtrl', function($scope){
+  var LOG = '[usersAddCtrl] => '
+  console.log(LOG + 'Entered')
 
+  $scope.addUser = function(){
+    var userView = {
+      login: $scope.login,
+      name: $scope.name,
+      password: $scope.password,
+      confirmPassword: $scope.confirmPassword,
+      telNumber: $scope.telNumber,
+      birthDate: $scope.birthDate
+    }
+
+    if(userView.password != userView.confirmPassword){
+      throw 'Le mot de passe et la confirmation du mot de passe doivent être identiques'
+    }
+
+    /* TODO: Call the service to persist user in database */
+  }
+})

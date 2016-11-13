@@ -15,9 +15,10 @@
   <!--   <link href="scripts/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
 
   <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+  <link rel="stylesheet" href="scripts/bootstrap/bootstrap-switch.css">
+
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/main.js"></script>
@@ -27,6 +28,10 @@
   <script src="scripts/controllers/usersCtrl.js"></script>
 
   <style>
+
+    [class="container"] {
+      overflow: auto;
+    }
     header {
       text-align: center;
       background-color: black;
@@ -43,6 +48,12 @@
       bottom: 0px;
       padding: 25px;
       width: 100%;
+    }
+
+    .home-link:link {
+      color: white;
+      text-decoration: none;
+      font-size: 2em;
     }
 
     [class*="col"] {
@@ -74,72 +85,91 @@
       max-width: 100%;
       display: block;
     }
+
+    [class|="carousel-inner"] {
+      height: 19em;
+    }
+
+    #homeCarousel {
+      width: 100%;
+      text-align: center;
+      background-color: black;
+    }
+
   </style>
 </head>
 <body ng-app="smsCampaignApp">
 
 
 <header>
-  <h1>Gestionnaire de campagnes SMS</h1>
+  <!--<div ng-click=""></div>-->
+  <a ui-sref="home" class="home-link">Gestionnaire de campagnes SMS</a>
 </header>
+
 <nav id="menu" ng-controller="loginCtrl">
   <ul id="barre" class="nav nav-pills center">
+    <li><a ui-sref="sign-in">Connexion </a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Campagnes Sms </a>
+      <a class="dropdown-toggle" data-toggle="dropdown">Campagnes Sms </a>
       <ul class="dropdown-menu">
         <li><a ui-sref="campaigns.add">Créer une campagne SMS</a></li>
-        <li><a href="#">Rechercher une campagne SMS</a></li>
+        <li><a ui-sref="campaigns.search">Rechercher une campagne SMS</a></li>
       </ul>
     </li>
     <li><a ui-sref="import">Import de données</a></li>
     <li><a href="#">Statistiques</a></li>
     <li><a href="#">Gestion du compte</a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Utilisateurs</a>
+      <a class="dropdown-toggle" data-toggle="dropdown">Utilisateurs</a>
       <ul class="dropdown-menu">
         <li><a ui-sref="users.search">Rechercher un utilisateur</a></li>
         <li><a ui-sref="users.add">Ajouter un utilisateur</a></li>
-      <!--  <li><a ui-sref="users.edit">Modifier un utilisateur</a></li>-->
-
       </ul>
     </li>
   </ul>
 </nav>
+
+<marquee>Attention, votre crédit SMS est presque épuisé, Pensez à recharger</marquee>
 <div id="wrapper">
   <div class="container">
-    <footer>
-      <div class="row">
-        <div class="col-lg-6">
-          <h4>Press'Conseil SARL</h4>
-          <h5>28 Rue GIMELLI , 83000 Toulon</h5>
-          <h5>Tel: 04 94 91 14 19</h5>
-          <h5>Site : www.lejbm.fr - Appli android : LeJBM Annonces</h5>
-        </div>
 
-        <div class="col-lg-6">
-          <h4>Autres informations</h4>
-          <h5> ... </h5>
-          <h5> ... </h5>
-
-        </div>
-      </div>
-    </footer>
-    <div ui-view ng-controller="homeCtrl"/>
-    <div ui-view ng-controller="campaignsCtrl"/>
-    <div ui-view ng-controller="datasImportCtrl"/>
-    <div ui-view ng-controller="loginCtrl"/>
-    <div ui-view ng-controller="usersCtrl"/>
+    <div ui-view/>
 
   </div>
 </div>
+<!--
+<footer>
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Press'Conseil SARL</h4>
+      <h5>28 Rue GIMELLI , 83000 Toulon</h5>
+      <h5>Tel: 04 94 91 14 19</h5>
+      <h5>Site : www.lejbm.fr - Appli android : LeJBM Annonces</h5>
+    </div>
 
+    <div class="col-lg-6">
+      <h4>Autres informations</h4>
+      <h5> ... </h5>
+      <h5> ... </h5>
+
+    </div>
+  </div>
+</footer> -->
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!--     <script src="scripts/bootstrap/jquery.min.js"></script> -->
 <!--   <script src="scripts/bootstrap/bootstrap.min.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- endbuild -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="scripts/bootstrap/bootstrap-switch.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
 
 <!--    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>   -->
 
